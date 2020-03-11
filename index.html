@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <main>
-      <!-- wrapper -->
-      <div class="wrapper">
-        <!-- barra alta fixed  -->
-        <div class="upgradebar">
-          <a href="#">effettua l'upgrade</a>
-        </div>
 
+    <header>
+      <!-- barra alta fixed  -->
+      <div class="upgradebar">
+        <a href="#">effettua l'upgrade</a>
+      </div>
+    </header>
+    <main>
         <!-- barra laterale -->
         <section class="sidebar">
           <div class="flex-item-1">
@@ -44,7 +44,7 @@
                 </li>
               </ul>
             </div>
-
+            <!-- Playlist laterale -->
             <div class="custom-playlist">
               <h3>playlist</h3>
               <a href="#" class="custom-playlist-title-link">
@@ -86,7 +86,7 @@
             </div>
 
           </div>
-
+          <!-- secondo flex item -->
           <div class="flex-item-2">
             <a href="#">
               <img src="img/download.svg" alt="download" class="download-img">
@@ -97,7 +97,128 @@
             <span class="profile-name">ZZu Maida</span>
           </div>
         </section>
+
+        <section id="central-block">
+          <div class="quick-menu">
+            <ul>
+              <li>
+                <a href="#">IN EVIDENZA
+                </a>
+              </li>
+              <li>
+                <a href="#">PODCAST
+                </a>
+              </li>
+              <li>
+                <a href="#">CLASSIFICHE
+                </a>
+              </li>
+              <li>
+                <a href="#">GENERI E MOOD
+                </a>
+              </li>
+              <li>
+                <a href="#">NUOVE USCITE
+                </a>
+              </li>
+              <li>
+                <a href="#">SCOPRI
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="title-top-album">Recently played</h3>
+          </div>
+          <div class="albums-div-flex">
+            <div class="albums-item">
+              <img src="img/metal_lifting.jpg" alt="heavy metal cover">
+              <h5>Heavy Metal</h5>
+              <span>subtitle</span>
+              <div class="layover">
+              </div>
+            </div>
+            <div class="albums-item">
+              <img src="img/stranger.jpeg" alt="stranger things cover">
+              <h5>Stranger Things, Vol. 1 a Netflix Original Series Soundtrack</h5>
+              <span>subtitle</span>
+              <div class="layover">
+              </div>
+            </div>
+            <div class="albums-item">
+              <img src="img/aquietplace.jpeg" alt="a quiet place jpeg">
+              <h5>A quiet place</h5>
+              <span>subtitle</span>
+              <div class="layover">
+              </div>
+            </div>
+            <div class="albums-item">
+              <img src="img/split.jpeg" alt="split cover">
+              <h5>Split</h5>
+              <span>subtitle</span>
+              <div class="layover">
+              </div>
+            </div>
+            <div class="albums-item">
+              <img src="img/cure.jpeg" alt="cure image">
+              <h5>A cure for wellness</h5>
+              <span>subtitle</span>
+              <div class="layover">
+              </div>
+            </div>
+            <div class="albums-item">
+              <img src="img/sinister.jpeg" alt="sinister cover">
+              <h5>Sinister</h5>
+              <span>subtitle</span>
+              <div class="layover">
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="title-top-album">Creato ppo ZZu Maida</h3>
+            <span class="subtitle-top-album">Più ascolti, più accurati saranno i suggerimenti.</span>
+          </div>
+          <div class="albums-div-flex-2">
+            <div class="albums-item">
+              <img src="img/radar.jpeg" alt="radar cover">
+              <h5>Release Radar</h5>
+              <div class="layover">
+              </div>
+            </div>
+            <div class="albums-item">
+              <img src="img/mixdaily.jpeg" alt="daily mix cover">
+              <h5>Daily mix 1</h5>
+              <div class="layover">
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="title-top-album">Artisti più popolari</h3>
+            <span class="subtitle-top-album">Più ascolti, più accurati saranno i suggerimenti.</span>
+          </div>
+          <div class="albums-div-flex-2">
+            <div class="albums-item">
+              <img src="img/youg.jpeg" alt="lana del rey album">
+              <h5>Lana Del Rey</h5>
+              <div class="layover">
+              </div>
+            </div>
+            <div class="albums-item">
+              <img src="img/einaudi.jpeg" alt="einaudi cover">
+              <h5>Ludovico Einaudi</h5>
+              <div class="layover">
+              </div>
+            </div>
+          </div>
+
+
+
+        </section>
+    </main>
+    <footer>
+        <!-- barra player sottostante -->
         <nav class="player-bottom">
+          <!-- primo item nav bottom -->
           <div class="item-player-bottom-1">
             <span class="sinister-img">
                 <img src="img/sinister.jpeg" alt="sinister picture">
@@ -121,6 +242,7 @@
                 </a>
             </div>
           </div>
+          <!-- secondo item nav sotto -->
           <div class="item-player-bottom-2">
             <div class="riproduzione-pulsanti">
               <span><i class="fas fa-random"></i></span>
@@ -139,6 +261,7 @@
               <span class="durata">4:35</span>
             </div>
           </div>
+          <!-- terzo item nav sotto -->
           <div class="item-player-bottom-3">
             <span><i class="fas fa-list-ul"></i></span>
             <span><i class="fas fa-desktop"></i></span>
@@ -150,8 +273,7 @@
             </div>
           </div>
         </nav>
-        <!-- wrapper end -->
-      </div>
-    </main>
+
+    </footer>
   </body>
 </html>
