@@ -6,13 +6,12 @@
 body{
   font-family: 'Montserrat', sans-serif;
   color: rgb(255, 255, 255);
-  height: 2000px;
 }
 /* proprità wrapper */
 .wrapper{
   width: 100%;
   height: 100vh;
-  background-color: #fff;
+  background-color: #141922;
   z-index: -1
 }
 
@@ -58,11 +57,12 @@ a:link {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 2;
-  padding: 10px 10px;
+  z-index: 1;
+  padding: 10px 20px;
 }
 .flex-item-1{
-  height: 60vh;
+  flex-basis: 60%;
+  flex-shrink: 0;
 }
 .logo-spotify{
   margin-bottom: 15px;
@@ -106,7 +106,7 @@ a.pulsanti-link-active > img:hover{
 /* playlist sidebar */
 .custom-playlist{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   height: 40vh;
   flex-direction: column;
@@ -115,6 +115,7 @@ a.pulsanti-link-active > img:hover{
   text-transform: uppercase;
   font-size: 13px;
   font-weight: bold;
+  flex-shrink: 0;
 }
 
 /* tasto + */
@@ -139,6 +140,7 @@ a.custom-playlist-title-link{
   font-size: 17px;
   display: inline-block;
   margin: 8px 0;
+  flex-shrink: 0;
 }
 a.custom-playlist-title-link:hover{
   color: #fff;
@@ -148,7 +150,7 @@ a.custom-playlist-title-link:hover span.plus{
 }
 
 ul.playlist-list{
-height: 100%;
+min-height: 60%;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
@@ -164,6 +166,11 @@ ul.playlist-list a:hover{
   color: rgb(255, 255, 255);
 }
 
+/* Flex item 2 sidebar */
+.flex-item-2{
+  flex-basis: 10%;
+  background-color: black;
+}
 hr.linea-hr{
   color: rgba(255, 255, 255, 0.6);
   margin: 10px 0;
@@ -187,4 +194,61 @@ span.installa-app{
 }
 span.installa-app:hover{
   color: #fff;
+}
+/* player bottom */
+.player-bottom{
+  background-color: grey;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  padding: 0 10px;
+}
+
+.item-player-bottom-1{
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.sinister-img img{
+  max-width: 25%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.sinister-img ul{
+  display: inline-block;
+  list-style: none;
+  vertical-align: middle;
+  padding-left: 5px;
+}
+.sinister-img ul li{
+  line-height: 14px;;
+}
+a.sinister-title-link{
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+
+}
+a.sinister-subtitle-link{
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+}
+a.sinister-title-link:hover,
+a.sinister-subtitle-link:hover{
+  color: #fff;
+  text-decoration: underline;
+}
+
+.
+
+.item-player-bottom-2{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
 }
