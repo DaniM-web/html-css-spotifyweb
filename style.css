@@ -57,17 +57,16 @@ a:link {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 1;
   padding: 10px 20px;
 }
 .flex-item-1{
-  flex-basis: 60%;
-  flex-shrink: 0;
+  /* flex-basis: 60%;
+  flex-shrink: 0; */
 }
 .logo-spotify{
   margin-bottom: 15px;
   width: 100%;
-  height: 5vh;
+  /* height: 5vh; */
 }
 img.logoimg{
   max-width: 80%;
@@ -75,7 +74,7 @@ img.logoimg{
 }
 .pulsanti{
   width: 100%;
-  height: 18vh;
+  /* height: 18vh; */
 }
 img.pulsanti-img{
   max-width: 20%;
@@ -108,14 +107,15 @@ a.pulsanti-link-active > img:hover{
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  height: 40vh;
+  /* min-height: 40vh; */
   flex-direction: column;
+  margin-top: 20px;
 }
 .custom-playlist h3{
   text-transform: uppercase;
   font-size: 13px;
   font-weight: bold;
-  flex-shrink: 0;
+  margin-bottom: 8px;
 }
 
 /* tasto + */
@@ -148,14 +148,20 @@ a.custom-playlist-title-link:hover{
 a.custom-playlist-title-link:hover span.plus{
   background-color: #fff;
 }
-
+.playlist-list-div{
+  min-height: 200px;
+  overflow: auto;
+}
 ul.playlist-list{
-min-height: 60%;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-list-style: none;
-overflow: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+
+}
+ul.playlist-list li{
+  line-height: 40px;
 }
 
 ul.playlist-list a{
@@ -168,8 +174,7 @@ ul.playlist-list a:hover{
 
 /* Flex item 2 sidebar */
 .flex-item-2{
-  flex-basis: 10%;
-  background-color: black;
+
 }
 hr.linea-hr{
   color: rgba(255, 255, 255, 0.6);
@@ -197,17 +202,18 @@ span.installa-app:hover{
 }
 /* player bottom */
 .player-bottom{
+  position: relative;
+  z-index: 3;
   background-color: grey;
   width: 100vw;
   height: 100px;
   display: flex;
   justify-content: space-between;
-  z-index: 10;
   padding: 0 10px;
 }
 
 .item-player-bottom-1{
-  width: 10%;
+  width: calc((100vw / 12)*1.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -215,7 +221,7 @@ span.installa-app:hover{
 }
 
 .sinister-img img{
-  max-width: 25%;
+  max-width: 50px;
   vertical-align: middle;
   display: inline-block;
 }
@@ -239,16 +245,139 @@ a.sinister-subtitle-link{
   color: rgba(255, 255, 255, 0.6);
   font-size: 12px;
 }
+
 a.sinister-title-link:hover,
 a.sinister-subtitle-link:hover{
   color: #fff;
   text-decoration: underline;
 }
 
-.
+.sinister-pulsanti{
+display: flex;
+margin-left: 10px;
+}
+.sinister-pulsanti a{
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 10px;
+}
+.sinister-pulsanti a:hover{
+  color: #fff;
+}
+
 
 .item-player-bottom-2{
-  width: 60%;
+  min-width: calc((100vw / 12)*8);
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.riproduzione-pulsanti{
+  font-size: 18px;
+  width: calc(100vw / 6);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-shrink: 0;
+}
+.play-big{
+  font-size: 30px;
+}
+.riproduzione-pulsanti span{
+  cursor: pointer;
+}
+
+.riproduzione-barra{
+  width: calc(100vw / 3);
+  flex-shrink: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.durata{
+  display: inline-block;
+  font-size: 12px;
+}
+
+.avanzamento-div{
+  width: 80%;
+  height:4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.barra-avanzamento{
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+}
+
+.pallino{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.avanzamento-div:hover .pallino{
+  display: block;
+}
+.avanzamento-div:hover .barra-avanzamento{
+  background-color: green;
+}
+
+.item-player-bottom-3{
+  min-width: calc((100vw / 12)*1.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.volume-div{
+  width: 60%;
+  height:4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.volume-barra{
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+}
+.pallino-volume{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.volume-div:hover .pallino-volume{
+  display: block;
+}
+.volume-div:hover .volume-barra{
+  background-color: green;
 }
