@@ -6,30 +6,40 @@
 body{
   font-family: 'Montserrat', sans-serif;
   color: rgb(255, 255, 255);
+  min-width: 500px;
 }
 /* proprità wrapper */
 
 main{
-  width: 100%;
+  min-width: 100%;
+
   /* height: 100vh; */
   background-color: #141922;
   display: flex;
-
+  overflow: hidden;
 }
+
+/* header{
+  width: calc(100% - 200px);
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+} */
 
 /* Barra alta fissata */
 .upgradebar{
   background-color: rgba(0, 0, 0, 0.4);
   height: 100px;
-  width: calc(100% - 200px);
+  width: calc(100vw - 200px);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: fixed;
-  right: 0;
+  right: left;
+  margin-left: 200px;
   top: 0;
   padding-right: 30px;
   z-index: 1;
+  flex-grow: 0;
 }
 
 a:focus,
@@ -54,12 +64,12 @@ a:link {
 /* bara laterale */
 .sidebar{
   background-color: black;
-  width: 200px;
+  min-width: 200px;
   height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 0px 10px 20px;
 }
 .flex-item-1{
 
@@ -73,12 +83,17 @@ img.logoimg{
   max-width: 80%;
   height: auto;
 }
+img.logo-small-img{
+  display: none;
+}
+
 .pulsanti{
   width: 100%;
 }
 
 img.pulsanti-img{
-  max-width: 20%;
+  width: 20%;
+  min-width: 20%;
   vertical-align: middle;
   opacity: 0.7;
 }
@@ -126,7 +141,6 @@ a.pulsanti-link-active:before{
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  /* min-height: 40vh; */
   flex-direction: column;
   margin-top: 20px;
 }
@@ -161,9 +175,6 @@ a.custom-playlist-title-link:hover{
 }
 a.custom-playlist-title-link:hover span.plus{
   background-color: #fff;
-}
-.playlist-list-div{
-
 }
 
 ul.playlist-list{
@@ -220,6 +231,7 @@ footer{
   position: relative;
   z-index: 1;
   width: 100vw;
+  min-width: 500px;
   height: 100px;
   background-color: #282828;
 }
@@ -297,7 +309,7 @@ margin-left: 10px;
 
 .riproduzione-pulsanti{
   font-size: 18px;
-  width: calc(100vw / 6);
+  flex-basis: calc(100% / 6);
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -309,6 +321,8 @@ margin-left: 10px;
 }
 .riproduzione-pulsanti span{
   cursor: pointer;
+  flex-grow: 1;
+  margin: 0 10px;
 }
 /* barra player */
 .riproduzione-barra{
@@ -319,6 +333,7 @@ margin-left: 10px;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 15px;
+  flex-grow: 0;
 }
 
 .durata{
@@ -327,7 +342,7 @@ margin-left: 10px;
 }
 
 .avanzamento-div{
-  width: 80%;
+  min-width: 80%;
   height:4px;
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
@@ -337,7 +352,7 @@ margin-left: 10px;
 .barra-avanzamento{
   position: relative;
   display: inline-block;
-  width: 25%;
+  min-width: 25%;
   height: 4px;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 20px;
@@ -365,12 +380,12 @@ margin-left: 10px;
 
 /* terzo item nav bottom */
 .item-player-bottom-3{
-  max-width: 25%;
   min-width: calc(100% / 8);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
+  flex-grow: 0;
 }
 .volume-div{
   width: 60%;
@@ -412,6 +427,7 @@ margin-left: 10px;
 #central-block{
 padding: 100px 20px 20px;
 width: calc(100vw - 200px);
+min-width: 500px;
 height: calc(100vh - 100px);
 overflow-y: auto;
 display: flex;
@@ -422,6 +438,7 @@ align-items: flex-start;
 
 .quick-menu{
   width: 100%;
+  min-width: 400px;
   text-align: center;
 }
 .quick-menu ul{
@@ -463,12 +480,12 @@ margin-top: 30px;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  flex-grow: 0;
 }
 
 .albums-item{
   margin-right: 15px;
   flex-basis: calc(100% / 6 - 15px);
-  flex-shrink: 0;
   text-align: center;
   cursor: pointer;
 }
@@ -525,4 +542,50 @@ img.img-circle{
 }
 .albums-item:hover .layover i{
   display: block;
+}
+
+@media all and (max-width: 600px){
+  .custom-playlist,
+  .flex-item-2 span,
+  a.pulsanti-link-active span,
+  a.pulsanti-link-inactive span,
+  hr.linea-hr
+  {
+    display: none;
+  }
+  .sidebar{
+   min-width: 50px;
+   padding: 0 10px;
+  }
+  .upgradebar{
+    min-width: calc(100vw - 50px);
+    margin-left: 50px;
+  }
+  a.pulsanti-link-active img,
+  a.pulsanti-link-inactive img{
+    min-width: 30px;
+    max-width: 30px;
+  }
+  img.profile-img,
+  img.download-img{
+    min-width: 20px;
+    max-width: 20px;
+    margin-bottom: 10px;
+  }
+
+    #central-block{
+      width: calc(100vw - 50px);
+  }
+
+  .sinister-pulsanti{
+    flex-direction: column;
+    margin: 5px 10px;
+  }
+  img.logoimg{
+    display: none;
+  }
+  img.logo-small-img{
+    display: block;
+    max-width: 30px; 
+  }
 }
