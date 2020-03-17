@@ -11,10 +11,10 @@ body{
 /* proprità wrapper */
 
 main{
-  min-width: 100%;
+  /* min-width: 100%; */
 
   /* height: 100vh; */
-  background-color: #141922;
+  /* background-color: #141922; */
   display: flex;
   overflow: hidden;
 }
@@ -29,17 +29,15 @@ main{
 .upgradebar{
   background-color: rgba(0, 0, 0, 0.4);
   height: 100px;
-  width: calc(100vw - 200px);
+  width: calc(100vw - 260px);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: fixed;
-  right: left;
-  margin-left: 200px;
+  right: 0;
   top: 0;
   padding-right: 30px;
   z-index: 1;
-  flex-grow: 0;
 }
 
 a:focus,
@@ -64,11 +62,11 @@ a:link {
 /* bara laterale */
 .sidebar{
   background-color: black;
-  min-width: 200px;
+  min-width: 260px;
   height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 10px 0px 10px 20px;
 }
 .flex-item-1{
@@ -197,7 +195,11 @@ ul.playlist-list a:hover{
 /* Flex item 2 sidebar */
 .flex-item-2{
   width: 100%;
+  height: 100%;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 hr.linea-hr{
@@ -225,6 +227,138 @@ span.installa-app{
 span.installa-app:hover{
   color: #fff;
 }
+
+/* PARTE CENTRALE INIZIO */
+
+#central-block{
+padding: 100px 20px 20px;
+width: calc(100vw - 260px);
+min-width: 500px;
+height: calc(100vh - 100px);
+overflow-y: auto;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+background-color: #141922;
+}
+
+.quick-menu{
+  width: 100%;
+  min-width: 400px;
+  text-align: center;
+}
+.quick-menu ul{
+  list-style: none;
+  font-size: 13px;
+  line-height: 35px;
+}
+.quick-menu ul li{
+  display: inline-block;
+  margin: 10px;
+}
+.quick-menu ul a{
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 15px;
+  position: relative;
+}
+.quick-menu-link-active:after{
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  display: block;
+  height: 3px;
+  width: 30px;
+  background: greenyellow;
+}
+
+.quick-menu ul a:hover{
+  color: #fff;
+}
+
+h3.title-top-album{
+font-size: 25px;
+margin-top: 30px;
+}
+.albums-div-flex{
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.albums-item{
+  margin-right: 15px;
+  /* max-width: calc(100 / 6 - 15px); */
+  flex-basis: calc(100vw / 6 - 200px - 15px);
+  text-align: center;
+  cursor: pointer;
+
+
+}
+
+.cover-container img{
+  width: 250px;
+  /* min-width: 150px; */
+
+}
+.albums-item h5{
+  font-size: 20px;
+  margin: 5px 0;
+}
+.albums-item span{
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.subtitle-top-album{
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  margin-top: 10px;
+}
+
+img.img-circle{
+  border-radius: 100%;
+}
+
+.cover-container{
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+}
+
+.layover{
+  background-color: rgba(0,0,0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.layover-radius{
+  border-radius: 100%;
+}
+.layover i{
+  font-size: 60px;
+  display: none;
+}
+
+.albums-item:hover .layover{
+  background-color: rgba(0,0,0, 0.5);
+}
+.albums-item:hover .layover i{
+  display: block;
+}
+
+
+
 /* FOOTER */
 footer{
   position: relative;
@@ -426,140 +560,15 @@ display: flex;
 .volume-div:hover .volume-barra{
   background-color: green;
 }
-/* PARTE CENTRALE INIZIO */
 
-#central-block{
-padding: 100px 20px 20px;
-width: calc(100vw - 200px);
-min-width: 500px;
-height: calc(100vh - 100px);
-overflow-y: auto;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: flex-start;
-}
-
-.quick-menu{
-  width: 100%;
-  min-width: 400px;
-  text-align: center;
-}
-.quick-menu ul{
-  list-style: none;
-  font-size: 13px;
-  line-height: 35px;
-}
-.quick-menu ul li{
-  display: inline-block;
-  margin: 10px;
-}
-.quick-menu ul a{
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 15px;
-  position: relative;
-}
-.quick-menu-link-active:after{
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  content: '';
-  display: block;
-  height: 3px;
-  width: 30px;
-  background: greenyellow;
-}
-
-.quick-menu ul a:hover{
-  color: #fff;
-}
-
-h3.title-top-album{
-font-size: 25px;
-margin-top: 30px;
-}
-.albums-div-flex{
-  flex-basis: 100%;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  flex-grow: 1;
-}
-
-.albums-item{
-  margin-right: 15px;
-  /* max-width: calc(100 / 6 - 15px); */
-  flex-basis: calc(100vw / 6 - 200px - 15px);
-  text-align: center;
-  cursor: pointer;
-
-
-}
-
-.cover-container img{
-  width: 250px;
-  /* min-width: 150px; */
-
-}
-.albums-item h5{
-  font-size: 20px;
-  margin: 5px 0;
-}
-.albums-item span{
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.6);
-}
-.subtitle-top-album{
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
-  display: inline-block;
-  margin-top: 10px;
-}
-
-img.img-circle{
-  border-radius: 100%;
-}
-
-.cover-container{
-  position: relative;
-  width: 100%;
-  margin: 10px 0;
-  display: flex;
-}
-
-.layover{
-  background-color: rgba(0,0,0, 0);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.layover-radius{
-  border-radius: 100%;
-}
-.layover i{
-  font-size: 60px;
-  display: none;
-}
-
-.albums-item:hover .layover{
-  background-color: rgba(0,0,0, 0.5);
-}
-.albums-item:hover .layover i{
-  display: block;
-}
 
 @media all and (max-width: 600px){
   .custom-playlist,
   .flex-item-2 span,
   a.pulsanti-link-active span,
   a.pulsanti-link-inactive span,
-  hr.linea-hr
+  hr.linea-hr,
+  .playlist-list-div
   {
     display: none;
   }
@@ -567,6 +576,9 @@ img.img-circle{
    min-width: 50px;
    padding: 0 10px;
   }
+.flex-item-2{
+  justify-content: flex-end;
+}
   .upgradebar{
     min-width: calc(100vw - 50px);
     margin-left: 50px;
