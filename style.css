@@ -8,23 +8,11 @@ body{
   color: rgb(255, 255, 255);
   min-width: 500px;
 }
-/* proprità wrapper */
 
 main{
-  /* min-width: 100%; */
-
-  /* height: 100vh; */
-  /* background-color: #141922; */
   display: flex;
   overflow: hidden;
 }
-
-/* header{
-  width: calc(100% - 200px);
-  height: 100px;
-  background-color: rgba(0, 0, 0, 0.4);
-} */
-
 /* Barra alta fissata */
 .upgradebar{
   background-color: rgba(0, 0, 0, 0.4);
@@ -134,13 +122,29 @@ a.pulsanti-link-active:before{
   font-size: 14px;
 }
 
+
+
+/* Flex item 2 sidebar */
+.flex-item-2{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+
 /* playlist sidebar */
 .custom-playlist{
   display: flex;
   justify-content: flex-start;
   width: 100%;
+  height: 100%;
   flex-direction: column;
   margin-top: 20px;
+  overflow: hidden;
 }
 .custom-playlist h3{
   text-transform: uppercase;
@@ -171,17 +175,21 @@ a.custom-playlist-title-link:hover{
 a.custom-playlist-title-link:hover span.plus{
   background-color: #fff;
 }
-
+.playlist-list-div{
+  overflow: hidden;
+}
 ul.playlist-list{
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   list-style: none;
+  overflow-y: auto;
 }
 
 ul.playlist-list li{
-  line-height: 40px;
+  line-height: 50px;
 }
 
 ul.playlist-list a{
@@ -192,15 +200,6 @@ ul.playlist-list a:hover{
   color: rgb(255, 255, 255);
 }
 
-/* Flex item 2 sidebar */
-.flex-item-2{
-  width: 100%;
-  height: 100%;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 hr.linea-hr{
   color: rgba(255, 255, 255, 0.4);
@@ -292,18 +291,20 @@ margin-top: 30px;
 
 .albums-item{
   margin-right: 15px;
-  /* max-width: calc(100 / 6 - 15px); */
-  flex-basis: calc(100vw / 6 - 200px - 15px);
+  flex-basis: calc(100% / 6 - 15px);
   text-align: center;
   cursor: pointer;
-
-
+}
+.albums-item-2{
+  margin-right: 15px;
+  flex-basis: calc(100% / 2 - 15px);
+  text-align: center;
+  cursor: pointer;
 }
 
 .cover-container img{
-  width: 250px;
-  /* min-width: 150px; */
-
+  width: 100%;
+  min-width: 150px;
 }
 .albums-item h5{
   font-size: 20px;
@@ -354,6 +355,12 @@ img.img-circle{
   background-color: rgba(0,0,0, 0.5);
 }
 .albums-item:hover .layover i{
+  display: block;
+}
+.albums-item-2:hover .layover{
+  background-color: rgba(0,0,0, 0.5);
+}
+.albums-item-2:hover .layover i{
   display: block;
 }
 
